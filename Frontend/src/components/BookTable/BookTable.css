@@ -1,0 +1,57 @@
+.book-table {
+    background-color: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px #07070715;
+    transition: 0.3s;
+    animation: fadeIn 1s;    
+    max-width: 600px;
+    margin: auto;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.book-table h1 {
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: tomato;
+}
+
+.book-table form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.book-table .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.book-table .form-control {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.book-table .emailImput {
+    width: 100%;
+}
+
+.book-table .form-control:focus {
+    border-color: tomato;
+    box-shadow: 0 0 5px tomato;
+}
+
+.book-table button {
+    padding: 10px;
+    color: white;
+    font-size: medium;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: tomato;
+    margin: 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 50%;
+}

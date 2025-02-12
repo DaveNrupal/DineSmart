@@ -59,6 +59,17 @@ const StoreContextProvider = (props) => {
         setMenu(response.data.data)
     }
 
+    const bookTableForUser = async (formData) => {
+        try {
+            console.log("store context :: ", formData);
+            const response = await axios.post(url+"/api/book-table/bookTable",{formData},{headers:{token}});
+            console.log("store context :: ", response.data);
+            alert(response.data.message);
+        } catch (error) {
+            alert("Error booking table");
+        }
+    }
+
     useEffect(()=>{
         async function loadData() {
             await fetchFoodList();
@@ -83,7 +94,8 @@ const StoreContextProvider = (props) => {
         setToken,
         menu,
         totalAmount,
-        setTotalAmount
+        setTotalAmount,
+        bookTableForUser
     }
 
     return (
