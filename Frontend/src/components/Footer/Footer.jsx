@@ -6,7 +6,7 @@ const Footer = () => {
         <div className='footer' id='footer'>
             <div className="footer-content">
                 <div className="footer-content-left">
-                    <img src={assets.logo} alt="" />
+                    <img src={assets.logo1} alt="" />
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum eos corporis, architecto dignissimos fuga voluptates aspernatur! Voluptates ducimus, minima, iste accusamus eius laudantium et at quidem nobis molestiae aperiam nihil.</p>
                     <div className="footer-social-icons">
                         <img src={assets.facebook_icon} alt="" />
@@ -26,13 +26,15 @@ const Footer = () => {
                 <div className="footer-content-right">
                     <h2>GET IN TOUCH</h2>
                     <ul>
-                        <li>+91 931-343-7008</li>
-                        <li>contact@avinashmourya.com</li>
+                        <li>fliu0709@conestogac.on.ca</li>
+                        <li>jpatel5314@conestogac.on.ca</li>
+                        <li>hsampla7358@conestogac.on.ca</li>
+                        <li>ndave8590@conestogac.on.ca</li>
                     </ul>
                 </div>
             </div>
             <hr />
-            <p className="footer-copyright">Copyright 2024 © Tomato.com -  All Rights Reserved.</p>
+            <p className="footer-copyright">Copyright 2024 © DineSmart.com -  All Rights Reserved.</p>
         </div>
     )
 }

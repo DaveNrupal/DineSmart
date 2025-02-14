@@ -1,8 +1,9 @@
 import express from "express"
-import bookUserTable from "../controllers/bookingController.js"
+import { bookUserTable, bookingInfo } from "../controllers/bookingController.js"
 
 const bookingRoute = express.Router()
 
 bookingRoute.post("/bookTable", bookUserTable);
+bookingRoute.post("/getBookings", bookingInfo);
 
 export default bookingRoute;

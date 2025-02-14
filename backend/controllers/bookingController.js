@@ -26,4 +26,13 @@ const bookUserTable = async (req, res) => {
     }
 };
 
-export default bookUserTable;
+const bookingInfo = async (req, res) => {
+    try {
+       const userBookData = await userModel.find();
+       res.json({success:true,data:userBookData});
+    } catch (error) {
+        res.json({success:false,message:"Server Error",error});
+    }
+};
+
+export {bookUserTable,bookingInfo};

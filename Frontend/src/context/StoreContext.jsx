@@ -1,9 +1,12 @@
 import axios from "axios";
 import { createContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const StoreContext = createContext(null)
 
 const StoreContextProvider = (props) => {
+
+    const navigate = useNavigate();
 
     const [cartItems, setCartItems] = useState({});
     const url = "http://localhost:4000"
@@ -61,10 +64,9 @@ const StoreContextProvider = (props) => {
 
     const bookTableForUser = async (formData) => {
         try {
-            console.log("store context :: ", formData);
             const response = await axios.post(url+"/api/book-table/bookTable",{formData},{headers:{token}});
             console.log("store context :: ", response.data);
-            alert(response.data.message);
+            navigate("/BookSuccess");
         } catch (error) {
             alert("Error booking table");
         }

@@ -9,6 +9,9 @@ import LoginPopup from './components/LoginPopup/LoginPopup'
 import Verify from './pages/Verify/Verify'
 import MyOrders from './pages/MyOrders/MyOrders'
 import Menu from './pages/Menu/Menu';
+import Success from './pages/Success/Success'
+import BookingSuccess from './pages/Success/BookingSuccess'
+import MyBookings from './pages/MyBookings/MyBookings'
 
 const App = () => {
 
@@ -26,6 +29,9 @@ const App = () => {
           <Route path='/verify' element={<Verify/>}/>
           <Route path='/myorders' element={<MyOrders/>}/>
           <Route path='/menu' element={<Menu />} />
+          <Route path='/Success' element={<Success />} />
+          <Route path='/BookSuccess' element={<BookingSuccess />} />
+          <Route path='/mybooking' element={<MyBookings/>} />
         </Routes>
       </div>
       <Footer />
