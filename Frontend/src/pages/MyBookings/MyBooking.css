@@ -1,0 +1,52 @@
+.booking {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* Added for button positioning */
+    border: 1px solid tomato;
+    border-radius: 10px;
+    padding: 16px;
+    margin: 12px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.booking h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.booking p {
+    font-size: 1rem;
+    color: #555;
+    margin: 4px 0;
+}
+
+.cancel-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #ff6347;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.cancel-btn:hover {
+    background-color: #e5533c;
+}
+
+.booking:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    border-color: #ff6347;
+}
+
+.booking:nth-child(even) {
+    background-color: #f9f9f9;
+}

@@ -45,6 +45,7 @@ const {bookTableForUser} = useContext(StoreContext);
         </Row>
       </Form>
         <button type="submit" onClick={handleSubmit}>Book Now</button>
+        <button type="submit" >View Available Table</button>
     </div>
   );
 };

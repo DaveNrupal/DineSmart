@@ -5,6 +5,7 @@ import { StoreContext } from '../../context/StoreContext';
 import axios from 'axios';
 
 const PlaceOrder = () => {
+  const navigate = useNavigate();
   const { token, cartItems, url, menu, totalAmount, setTotalAmount } = useContext(StoreContext);
 
   const [formData, setFormData] = useState({
@@ -41,16 +42,19 @@ const PlaceOrder = () => {
       const response = await axios.post(url + "/api/order/place", orderData, { headers: { token } });
       console.log("Response from server:", response.data);
       
+      // if (response.data.success) {
+      //   const { session_url } = response.data;
+      //   console.log("Redirecting to:", session_url);
+      //   window.location.replace(session_url);
+      // } else {
+      //   alert("Error: " + response.data.message);
+      // }
       if (response.data.success) {
-        const { session_url } = response.data;
-        console.log("Redirecting to:", session_url);
-        window.location.replace(session_url);
-      } else {
-        alert("Error: " + response.data.message);
-      }
+        navigate(`/Success`);
+    } else {
+        alert("Order failed!");
+    }
   }
-
-  const navigate = useNavigate();
 
   useEffect(()=>{
     if (!token) {
@@ -68,7 +72,7 @@ const PlaceOrder = () => {
 
   return (
     // onSubmit={placeOrder}
-    <form className='place-order'>
+    <form onSubmit={placeOrder} className='place-order'>
       <div className="place-order-left">
         <p className='title'>Delivery Information</p>
         <div className="multi-fields">

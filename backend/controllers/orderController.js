@@ -45,16 +45,23 @@ const placeOrder = async (req, res) => {
             quantity: 1
         });
 
-        // Create a Stripe checkout session
-        const session = await stripe.checkout.sessions.create({
-            line_items: line_items,
-            mode: 'payment',
-            success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
-            cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
+        res.json({
+            success: true,
+            message: "Order placed successfully",
+            orderId: newOrder._id,
         });
+        
 
-        // Send response with the session URL
-        res.json({ success: true, session_url: session.url });
+        // Create a Stripe checkout session
+    //     const session = await stripe.checkout.sessions.create({
+    //         line_items: line_items,
+    //         mode: 'payment',
+    //         success_url: `${frontend_url}/verify?success=true&orderId=${newOrder._id}`,
+    //         cancel_url: `${frontend_url}/verify?success=false&orderId=${newOrder._id}`,
+    //     });
+
+    //     // Send response with the session URL
+    //     res.json({ success: true, session_url: session.url });
     } catch (error) {
         console.log(error);
         res.json({ success: false, message: "Error" });
