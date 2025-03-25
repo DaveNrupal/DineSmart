@@ -64,11 +64,22 @@ const StoreContextProvider = (props) => {
 
     const bookTableForUser = async (formData) => {
         try {
-            const response = await axios.post(url+"/api/book-table/bookTable",{formData},{headers:{token}});
+            const response = await axios.post(url+"/api/book/bookTable",{formData},{headers:{token}});
             console.log("store context :: ", response.data);
             navigate("/BookSuccess");
         } catch (error) {
-            alert("Error booking table");
+            alert(error.response.data.message ? error.response.data.message : "Error while reservation");
+        }
+    }
+
+    const bookEventForUser = async (formData) => {
+        try{
+            const response = await axios.post(url+"/api/book/bookEvent",{formData},{headers:{token}});
+            console.log("Event response :: ",response.data);
+            navigate("/EventSuccess");
+        } catch (e){
+            console.log(e);
+            alert("Error while booking event",e);
         }
     }
 
@@ -97,7 +108,8 @@ const StoreContextProvider = (props) => {
         menu,
         totalAmount,
         setTotalAmount,
-        bookTableForUser
+        bookTableForUser,
+        bookEventForUser
     }
 
     return (

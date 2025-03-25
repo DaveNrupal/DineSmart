@@ -8,6 +8,7 @@ import cartRouter from "./routes/cartRoute.js"
 import orderRouter from "./routes/orderRoute.js"
 import menuRoute from "./routes/menuRoute.js";
 import bookingRoute from "./routes/bookingRoute.js"
+import notificationRouter from "./routes/notificationRoutes.js"
 
 
 // app config
@@ -21,6 +22,8 @@ app.use(cors())
 // db connection
 connectDB();
 
+app.use('/uploads', express.static('uploads'));
+
 // api  endpoints
 app.use("/api/food",foodRouter)
 app.use("/images",express.static('uploads'))
@@ -28,7 +31,9 @@ app.use("/api/user",userRouter)
 app.use("/api/cart",cartRouter)
 app.use("/api/order",orderRouter)
 app.use("/api/menu", menuRoute);
-app.use("/api/book-table", bookingRoute);
+app.use("/api/book", bookingRoute);
+app.use('/api/notifications', notificationRouter);
+
 
 app.get("/",(req,res)=>{
     res.send("API Working")

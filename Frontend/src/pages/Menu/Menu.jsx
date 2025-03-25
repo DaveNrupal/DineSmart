@@ -6,6 +6,8 @@ import { assets } from "../../assets/assets";
 const Menu = () => {
     const {menu, cartItems,addToCart,removeFromCart} = useContext(StoreContext)
 
+    const backendUrl = "http://localhost:4000";
+
 
     return (
         <div className="menu">
@@ -13,7 +15,7 @@ const Menu = () => {
             <div className="menu-container">
                 {menu.map((item) => (
                     <div key={item._id} className="menu-item">
-                        <img src={`/assets/${item.image}.png`} alt={item.name} />
+                        <img src={item.image.startsWith("17") ? `${backendUrl}/uploads/${item.image}` : `/assets/${item.image}.png`} alt={item.name} />
                         <h3>{item.name}</h3>
                         <p className="menuDescription">{item.description}</p>
                         <p><strong>Price: </strong>${item.price}</p>

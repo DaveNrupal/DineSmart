@@ -119,4 +119,25 @@ const updateStatus = async (req,res) => {
     }
 }
 
-export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus}
+const deleteOrder = async (req,res) => {
+    try {
+        const { orderId } = req.body;  
+
+        if (!orderId) {
+            return res.status(400).json({ success: false, message: "Order ID is required." });
+        }
+
+        // Delete the order from the Order collection
+        const deletedOrder = await orderModel.findByIdAndDelete(orderId);
+        if (!deletedOrder) {
+            return res.status(404).json({ success: false, message: "Order not found." });
+        }
+
+        res.json({ success: true, message: "Order deleted successfully." });
+    } catch (error) {
+        console.error("Error deleting order:", error);
+        res.status(500).json({ success: false, message: "Internal server error." });
+    }
+}
+
+export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus,deleteOrder}

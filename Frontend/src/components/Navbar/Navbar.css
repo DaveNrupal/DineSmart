@@ -68,6 +68,7 @@
     display: none;
     right: 0;
     z-index: 1;
+    width: max-content;
 }
 .navbar-profile:hover .nav-profile-dropdown{
     display: flex;
@@ -87,7 +88,7 @@
     cursor: pointer;
 }
 .nav-profile-dropdown img{
-    width: 20px;
+    width: 15px;
 }
 .nav-profile-dropdown li:hover{
     color: tomato;
