@@ -7,6 +7,9 @@ import List from './pages/List/List'
 import Orders from './pages/Orders/Orders'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Tables from './pages/Tables/Tables'
+import Events from './pages/Tables/Events'
+import Notification from './pages/Add/Notification'
 
 const App = () => {
 
@@ -23,6 +26,9 @@ const App = () => {
           <Route path="/Add" element={<Add url={url}/>}/>
           <Route path="/list" element={<List url={url}/>}/>
           <Route path="/orders" element={<Orders url={url}/>}/>
+          <Route path="/tables" element={<Tables url={url}/>}/>
+          <Route path="/events" element={<Events url={url}/>}/>
+          <Route path="/addNotificatoin" element={<Notification url={url}/>}/>
         </Routes>
       </div>
     </div>

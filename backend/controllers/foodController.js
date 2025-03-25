@@ -1,14 +1,13 @@
-import foodModel from "../models/foodModel.js";
+import menuModel from "../models/menuModel.js";
 import fs from 'fs'
 
 
 // add food item
-
 const addFood = async (req,res) => {
 
     let image_filename = `${req.file.filename}`
 
-    const food = new foodModel({
+    const food = new menuModel({
         name:req.body.name,
         description:req.body.description,
         price:req.body.price,
@@ -18,7 +17,7 @@ const addFood = async (req,res) => {
     })
     try {
         await food.save();
-        res.json({success:true,message:"Food Added"})
+        res.json({success:true,message:"Menu Added"})
     } catch (error) {
         console.log(error)
         res.json({success:false,message:"Error"})
@@ -28,7 +27,7 @@ const addFood = async (req,res) => {
 // all food list
 const listFood = async (req,res) => {
     try {
-        const foods = await foodModel.find({});
+        const foods = await menuModel.find({});
         res.json({success:true,data:foods})
     } catch (error) {
         console.log(error);
@@ -39,10 +38,9 @@ const listFood = async (req,res) => {
 // remove food item
 const removeFood = async (req,res) => {
     try {
-        const food = await foodModel.findById(req.body.id);
+        const food = await menuModel.findById(req.body.id);
         fs.unlink(`uploads/${food.image}`,()=>{})
-
-        await foodModel.findByIdAndDelete(req.body.id);
+        await menuModel.findByIdAndDelete(req.body.id);
         res.json({success:true,message:"Food Removed"})
     } catch (error) {
         console.log(error);
