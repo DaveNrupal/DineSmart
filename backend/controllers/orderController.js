@@ -140,4 +140,8 @@ const deleteOrder = async (req,res) => {
     }
 }
 
-export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus,deleteOrder}
+const paymnetOptions = async (req, res) => {
+    res.json({ success: true });
+}
+
+export {placeOrder,verifyOrder,userOrders,listOrders,updateStatus,deleteOrder, paymnetOptions}

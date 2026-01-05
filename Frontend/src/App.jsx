@@ -14,6 +14,8 @@ import MyBookings from './pages/MyBookings/MyBookings'
 import EventBooking from './pages/EventBooking/EventBooking'
 import EventBookings from './pages/MyBookings/EventBookings'
 import Notifications from './pages/Notifications/Notifications'
+import Donations from './pages/Donations/Donations'
+import PaymentPage from './pages/PaymentPage/PaymentPage'
 
 const App = () => {
 
@@ -38,6 +40,8 @@ const App = () => {
           <Route path='/EventSuccess' element={<EventSuccessBooking/>} />
           <Route path='/myeventbooking' element={<EventBookings />} />
           <Route path='/notification' element={<Notifications />} />
+          <Route path='/donation' element={<Donations />} />
+          <Route path='/payment' element={<PaymentPage />} />
         </Routes>
       </div>
       <Footer />

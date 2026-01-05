@@ -23,17 +23,16 @@ const Navbar = ({ setShowLogin }) => {
             <Link to='/'><img src={assets.logo2} alt="" className="logo" /></Link>
             <ul className="navbar-menu">
                 <Link to='/' onClick={() => setMenu("home")} className={menu === "home" ? "active" : ""}>Home</Link>
-                <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Food Category</a>
-                <a href='/eventBooking' onClick={() => setMenu("eventBooking")} className={menu === "eventBooking" ? "active" : ""}>Event Booking</a>
-                {/* <a href='#app-download' onClick={() => setMenu("mobile-app")} className={menu === "mobile-app" ? "active" : ""}>Mobile App</a> */}
+                {/* <a href='#explore-menu' onClick={() => setMenu("menu")} className={menu === "menu" ? "active" : ""}>Food Category</a> */}
+                <Link to='/menu' onClick={() => setMenu("allmenu")} className={menu === "allmenu" ? "active" : ""}>Menu</Link>
+                <Link to='/eventBooking' onClick={() => setMenu("eventBooking")} className={menu === "eventBooking" ? "active" : ""}>Event Booking</Link>
                 <a href='#book-table' onClick={() => setMenu("book-table")} className={menu === "book-table" ? "active" : ""}>Book Table</a>
-                {/* <a href='#footer' onClick={() => setMenu("contact-us")} className={menu === "contact-us" ? "active" : ""}>Contact Us</a> */}
-                <Link to='/menu' onClick={() => setMenu("fullMenu")} className={menu === "fullMenu" ? "active" : ""}>Menu</Link>
-                <a href='/notification' onClick={() => setMenu("notification")} className={menu === "notification" ? "active" : ""}>Notification</a>
+                <Link to='/donation' onClick={() => setMenu("donation")} className={menu === "donation" ? "active" : ""}>Donation</Link>
+                
             </ul>
             <div className="navbar-right">
-                <img src={assets.search_icon} alt="" />
-                <div className="navbar-search-icon">
+            <Link to='/notification'><img src={assets.bell_icon} alt="" /></Link>
+                <div className="navbar-search-icon">  
                     <Link to='/cart'><img src={assets.basket_icon} alt="" /></Link>
                     <div className={getTotalCartAmount()===0?"":"dot"}></div>
                 </div>

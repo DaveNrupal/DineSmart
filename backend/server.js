@@ -9,6 +9,8 @@ import orderRouter from "./routes/orderRoute.js"
 import menuRoute from "./routes/menuRoute.js";
 import bookingRoute from "./routes/bookingRoute.js"
 import notificationRouter from "./routes/notificationRoutes.js"
+import donationRoutes from './routes/donationRoute.js'
+import foodDonationRoutes from './routes/foodDonationRoute.js'
 
 
 // app config
@@ -33,6 +35,8 @@ app.use("/api/order",orderRouter)
 app.use("/api/menu", menuRoute);
 app.use("/api/book", bookingRoute);
 app.use('/api/notifications', notificationRouter);
+app.use('/api/donate',donationRoutes);
+app.use('/api/foodDonate',foodDonationRoutes);
 
 
 app.get("/",(req,res)=>{

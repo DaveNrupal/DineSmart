@@ -12,7 +12,7 @@
 .navbar-menu{
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 40px;
     color: #49557e;
     font-size: 18px;
 }
@@ -49,6 +49,11 @@
 
 .navbar-search-icon{
     position: relative;
+}
+
+.navbar-bell-icon{
+    height: 10px;
+    width: 10px;
 }
 
 .navbar-search-icon .dot{

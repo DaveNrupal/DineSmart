@@ -1,0 +1,84 @@
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    background-color: #f8f8f8;
+}
+
+.payment-title {
+    color: #ff5733;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.card-details {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.saved-card {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.card-image {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 8px;
+}
+
+.card-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.card-dropdown {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.multi-input {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.multi-input .input-field {
+    flex: 1;
+}
+
+.payment-button {
+    background-color: #ff5733;
+    color: white;
+    padding: 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: background 0.3s;
+}
+
+.payment-button:hover {
+    background-color: #e04b2b;
+}

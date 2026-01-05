@@ -50,9 +50,9 @@ const PlaceOrder = () => {
       //   alert("Error: " + response.data.message);
       // }
       if (response.data.success) {
-        navigate(`/Success`);
+        navigate('/payment');
     } else {
-        alert("Order failed!");
+        alert('Order failed!');
     }
   }
 
